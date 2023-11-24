@@ -2,7 +2,7 @@
 
 namespace App\Filtros;
 
-class ExemploFiltro
+class Logado
 {
     /**
     * Aplica o filtro configurado
@@ -10,6 +10,8 @@ class ExemploFiltro
     */
     public function aplicar()
     {
-        // lógica do seu filtro, normalmente retornará um redirecionar
+        if (!usuario('logado')) {
+            return redirecionar('/conta/login');
+        }
     }
 }

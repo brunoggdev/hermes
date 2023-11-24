@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+body{
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: x-large;
+    overflow-x: hidden;
+    background-color: #e8e8e8;
+    box-sizing: border-box;
+}
+
+input, button{
+    padding: 0.7em 1.6em;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+input{
+    padding-left: 1em;
+}
+
+main {
+    width: clamp(250px, 25%, 25%);
+    display: grid;
+    place-items: center;
+}
+
+.erro_conta{
+    background-color: #f15f5f;
+    border-radius: 2px;
+    border: none;
+    padding: 2px 5px;
+    text-align: center;
+}
+
+.logout, .adicionar {
+    width: 100%;
+    margin: 15px;
+}
+
+/* .logout button, .adicionar button {
+    padding: 0.7em 1.7em;
+} */
+
+.logout button {
+    float: right;
+}
+
+.adicionar button{
+    float: left;
+    color: transparent;  
+    text-shadow: 0 0 0 rgb(204, 93, 50);
+}
+.rastreamento {
+    text-decoration: none;
+    color: rgb(204, 93, 50);
+    /* width: clamp(0px, 250px, 100%); */
+    width: 100%;
+    min-height: 50px;
+    border-radius: 5px;
+    /* border: 1px solid rgb(204, 93, 50);  */
+    /* border-radius: 15px; */
+    background: #c2c2c2;
+    box-shadow:  -12px 12px 24px #a5a5a5,
+                 12px -12px 24px #ffa632;
+    margin: .5em 0;
+}
+
+.rastreamento div{
+    padding: 0.7em;
+}
+.rastreamento span{
+    display: block;
+    margin-bottom: 5px;
+}
+.rastreamento p{
+    font-size: initial;
+    padding-left: 10px;
+}
+
+.neomorfismo, input, button {
+    color: #090909;
+    /* padding: 0.7em 1.7em; */
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+                -6px -6px 12px #ffffff;
+}
+  
+.neomorfismo:hover {
+    border: 1px solid white;
+}
+
+.neomorfismo:active {
+    box-shadow: 4px 4px 12px #c5c5c5,
+                -4px -4px 12px #ffffff;
+}
+button:hover {
+    cursor: pointer;
+}
+
+.deletar-codigo{
+    position: relative;
+    float: right;
+    padding: .2em .4em;
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: .5em;
+}
