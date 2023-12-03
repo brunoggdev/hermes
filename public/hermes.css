@@ -52,7 +52,7 @@ main {
     color: transparent;  
     text-shadow: 0 0 0 rgb(204, 93, 50);
 }
-.rastreamento {
+.rastreamento-item {
     text-decoration: none;
     color: rgb(204, 93, 50);
     /* width: clamp(0px, 250px, 100%); */
@@ -110,4 +110,21 @@ button:hover {
     font-size: 1.5em;
     font-weight: 900;
     margin-bottom: .5em;
+}
+
+.rastreamento *{
+    font-size: .97em;
+    margin: 0px !important;
+    padding: 5px !important;
+    
+}
+
+.card-header{
+    border: none !important;
+}
+.share-buttons {
+    display: none;
+}
+.container h1, h2 {
+    display: none;
 }

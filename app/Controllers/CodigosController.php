@@ -51,7 +51,9 @@ class CodigosController extends Controller
             throw new \Exception('Nenhuma resposta recebida... talvez mais tarde?');
         }
     
-        return $retorno[1];
+        return view('rastreamento', [
+            'rastreamento' => $retorno[1]
+        ]);
     }
 
 
