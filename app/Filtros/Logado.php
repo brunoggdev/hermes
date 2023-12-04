@@ -11,7 +11,8 @@ class Logado
     public function aplicar()
     {
         if (!usuario('logado')) {
-            return redirecionar('/conta/login');
+            return redirecionar('/conta/login')
+            ->com('erro_conta', 'Login necessário.');
         }
     }
 }

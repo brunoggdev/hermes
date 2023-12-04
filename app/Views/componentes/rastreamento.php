@@ -1,4 +1,4 @@
-<a class="rastreamento-item neomorfismo" href="<?=url_base("rastrear/$item[codigo]")?>">
+<a class="rastreamento neomorfismo" href="<?=url_base("rastrear/$item[codigo]")?>">
     <div>
         <span><?= $item['codigo'] ?></span>
         <p><?= $item['etiqueta'] ?></p>

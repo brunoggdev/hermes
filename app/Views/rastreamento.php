@@ -1,6 +1,6 @@
 <?=comp('header')?>
 
-    <div class="rastreamento">
+    <div class="historico-rastreamento">
         <?=$rastreamento?>
     </div>
 

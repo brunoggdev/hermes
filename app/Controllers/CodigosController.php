@@ -45,14 +45,17 @@ class CodigosController extends Controller
     {
         $html = requisicaoGet("https://www.linkcorreios.com.br?id=$codigo")->resposta();
     
-        $regex = '/<main.*?>(.*?)<a[^>]*name="envie_por_email"[^>]*>/s';
+        $regex = '/<div class="singlepost">(.*?<a[^>]*name="envie_por_email"[^>]*>)/s';
+
     
-        if (!preg_match($regex, $html, $retorno)){
+        if (!preg_match($regex, $html, $filtrado)){
             throw new \Exception('Nenhuma resposta recebida... talvez mais tarde?');
         }
+
+        $rastramento = str_replace('linha_status', 'linha_status neomorfismo', $filtrado[1]);
     
         return view('rastreamento', [
-            'rastreamento' => $retorno[1]
+            'rastreamento' => $rastramento
         ]);
     }
 
