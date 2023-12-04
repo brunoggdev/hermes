@@ -41,18 +41,19 @@ class CodigosController extends Controller
     }
 
     
-    public function rastrear($codigo)
+    public function rastrear(string $codigo)
     {
         $html = requisicaoGet("https://www.linkcorreios.com.br?id=$codigo")->resposta();
     
         $regex = '/<div class="singlepost">(.*?<a[^>]*name="envie_por_email"[^>]*>)/s';
 
     
-        if (!preg_match($regex, $html, $filtrado)){
-            throw new \Exception('Nenhuma resposta recebida... talvez mais tarde?');
+        if (preg_match($regex, $html, $filtrado)){
+            $rastramento = str_replace('linha_status', 'linha_status neomorfismo', $filtrado[1]);
+        }else {
+            $rastramento = '<p>Nenhum rastreamento encontrado para esse código. Tem certeza que está correto?</p>';
         }
 
-        $rastramento = str_replace('linha_status', 'linha_status neomorfismo', $filtrado[1]);
     
         return view('rastreamento', [
             'rastreamento' => $rastramento
