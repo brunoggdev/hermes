@@ -53,7 +53,7 @@ class ContaController extends Controller
 
         if (!$usuario_armazenado) {
             return redirecionar('conta/cadastro')
-                ->com('erro_conta', 'Usuário não pôde ser criado. Tente outro login.');
+                ->com('erro_conta', 'Login indisponível.');
         }
 
         return $this->login([$usuario['login'], $usuario['senha']]);

@@ -70,6 +70,6 @@ class CodigosController extends Controller
 
         (new CodigosModel)->delete($codigo);
 
-        return redirecionar('home');
+        return redirecionar('home')->com('resposta', 'Codigo deletado com sucesso.');
     }
 }

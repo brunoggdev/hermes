@@ -130,3 +130,14 @@ button:hover {
     list-style: none;
     margin-bottom: 25px !important;
 }
+
+
+.toast-container {
+    font-size: medium;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+}

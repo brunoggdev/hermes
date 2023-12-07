@@ -27,9 +27,23 @@ class UsuariosModel extends Model
      * Armazena um novo usuário no banco de dados
      * @author Brunoggdev
     */
-    public function armazenar(array $usuario)
+    public function armazenar(array $usuario):bool
     {
+        if ($this->usuarioExiste($usuario['login'])){
+            return false;
+        }
+
         $usuario['senha'] = encriptar($usuario['senha']);
         return $this->insert($usuario);
+    }
+
+
+    /**
+     * Verifica se um usuário já existe pelo login
+     * @author Brunoggdev
+    */
+    public function usuarioExiste(string $login):bool
+    {
+        return (bool) $this->where(['login' => $login])->primeiro();
     }
 }
